@@ -1,0 +1,354 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+    table, th, td {
+      border: 1px solid black;
+      text-align: center;
+    }
+    div {
+      width: 120px;
+      height: 120px;
+      display:flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    h1 {
+      margin-top: 0;
+      margin-bottom: 0;
+      margin-left: 0;
+      margin-right: 0;
+    }
+    </style>
+    <script>
+      var arr = [-1,-1,-1,-1,-1,-1,-1,-1,-1];
+      function preencher(tid){
+        if(arr[tid]==-1)
+        {
+          arr[tid]=1;
+          document.getElementById(tid).innerHTML = '<h1>X</h1>';
+          iaplay();
+        }
+
+      }
+      function iaplay()
+      {
+            if(arr[0]==0 && arr[1]==-1 && arr[2]==0)
+            {
+                arr[1]=0;document.getElementById('1').innerHTML = '<h1>O</h1>';
+            }
+            else if(arr[0]==0 && arr[1]==0 && arr[2]==-1)
+            {
+                arr[2]=0;document.getElementById('2').innerHTML = '<h1>O</h1>';
+            }
+            else if(arr[0]==-1 && arr[1]==0 && arr[2]==0)
+            {
+                arr[0]=0;document.getElementById('0').innerHTML = '<h1>O</h1>';
+            }
+
+
+            else if(arr[0]==0 && arr[3]==-1 && arr[6]==0)
+            {
+                arr[3]=0;document.getElementById('3').innerHTML = '<h1>O</h1>';
+            }
+            else if(arr[0]==0 && arr[3]==0 && arr[6]==-1)
+            {
+                arr[6]=0;document.getElementById('6').innerHTML = '<h1>O</h1>';
+            }
+            else if(arr[0]==-1 && arr[3]==0 && arr[6]==0)
+            {
+                arr[0]=0;document.getElementById('0').innerHTML = '<h1>O</h1>';
+            }
+
+
+            else if(arr[3]==0 && arr[4]==-1 && arr[5]==0)
+            {
+                arr[4]=0;document.getElementById('4').innerHTML = '<h1>O</h1>';
+            }
+            else if(arr[3]==0 && arr[4]==0 && arr[5]==-1)
+            {
+                arr[5]=0;document.getElementById('5').innerHTML = '<h1>O</h1>';
+            }
+            else if(arr[3]==-1 && arr[4]==0 && arr[5]==0)
+            {
+                arr[3]=0;document.getElementById('3').innerHTML = '<h1>O</h1>';
+            }
+
+
+            else if(arr[6]==0 && arr[7]==-1 && arr[8]==0)
+            {
+                arr[7]=0;document.getElementById('7').innerHTML = '<h1>O</h1>';
+            }
+            else if(arr[6]==0 && arr[7]==0 && arr[8]==-1)
+            {
+                arr[8]=0;document.getElementById('8').innerHTML = '<h1>O</h1>';
+            }
+            else if(arr[6]==-1 && arr[7]==0 && arr[8]==0)
+            {
+                arr[6]=0;document.getElementById('6').innerHTML = '<h1>O</h1>';
+            }
+
+
+            else if(arr[1]==0 && arr[4]==-1 && arr[7]==0)
+            {
+                arr[4]=0;document.getElementById('4').innerHTML = '<h1>O</h1>';
+            }
+            else if(arr[1]==0 && arr[4]==0 && arr[7]==-1)
+            {
+                arr[7]=0;document.getElementById('7').innerHTML = '<h1>O</h1>';
+            }
+            else if(arr[1]==-1 && arr[4]==0 && arr[7]==0)
+            {
+                arr[1]=0;document.getElementById('1').innerHTML = '<h1>O</h1>';
+            }
+
+
+            else if(arr[2]==0 && arr[5]==-1 && arr[8]==0)
+            {
+                arr[5]=0;document.getElementById('5').innerHTML = '<h1>O</h1>';
+            }
+            else if(arr[2]==0 && arr[5]==0 && arr[8]==-1)
+            {
+                arr[8]=0;document.getElementById('8').innerHTML = '<h1>O</h1>';
+            }
+            else if(arr[2]==-1 && arr[5]==0 && arr[8]==0)
+            {
+                arr[2]=0;document.getElementById('2').innerHTML = '<h1>O</h1>';
+            }
+
+
+            else if(arr[0]==0 && arr[4]==-1 && arr[8]==0)
+            {
+                arr[4]=0;document.getElementById('4').innerHTML = '<h1>O</h1>';
+            }
+            else if(arr[0]==0 && arr[4]==0 && arr[8]==-1)
+            {
+                arr[8]=0;document.getElementById('8').innerHTML = '<h1>O</h1>';
+            }
+            else if(arr[0]==-1 && arr[4]==0 && arr[8]==0)
+            {
+                arr[0]=0;document.getElementById('0').innerHTML = '<h1>O</h1>';
+            }
+
+
+            else if(arr[2]==0 && arr[4]==-1 && arr[6]==0)
+            {
+                arr[4]=0;document.getElementById('4').innerHTML = '<h1>O</h1>';
+            }
+            else if(arr[2]==0 && arr[4]==0 && arr[6]==-1)
+            {
+                arr[6]=0;document.getElementById('6').innerHTML = '<h1>O</h1>';
+            }
+            else if(arr[2]==-1 && arr[4]==0 && arr[6]==0)
+            {
+                arr[2]=0;document.getElementById('2').innerHTML = '<h1>O</h1>';
+            }
+
+
+            //end ia move
+
+
+            else if(arr[0]==1 && arr[1]==-1 && arr[2]==1)
+            {
+                arr[1]=0;document.getElementById('1').innerHTML = '<h1>O</h1>';
+            }
+            else if(arr[0]==1 && arr[1]==1 && arr[2]==-1)
+            {
+                arr[2]=0;document.getElementById('2').innerHTML = '<h1>O</h1>';
+            }
+            else if(arr[0]==-1 && arr[1]==1 && arr[2]==1)
+            {
+                arr[0]=0;document.getElementById('0').innerHTML = '<h1>O</h1>';
+            }
+
+
+            else if(arr[0]==1 && arr[3]==-1 && arr[6]==1)
+            {
+                arr[3]=0;document.getElementById('3').innerHTML = '<h1>O</h1>';
+            }
+            else if(arr[0]==1 && arr[3]==1 && arr[6]==-1)
+            {
+                arr[6]=0;document.getElementById('6').innerHTML = '<h1>O</h1>';
+            }
+            else if(arr[0]==-1 && arr[3]==1 && arr[6]==1)
+            {
+                arr[0]=0;document.getElementById('0').innerHTML = '<h1>O</h1>';
+            }
+
+
+            else if(arr[3]==1 && arr[4]==-1 && arr[5]==1)
+            {
+                arr[4]=0;document.getElementById('4').innerHTML = '<h1>O</h1>';
+            }
+            else if(arr[3]==1 && arr[4]==1 && arr[5]==-1)
+            {
+                arr[5]=0;document.getElementById('5').innerHTML = '<h1>O</h1>';
+            }
+            else if(arr[3]==-1 && arr[4]==1 && arr[5]==1)
+            {
+                arr[3]=0;document.getElementById('3').innerHTML = '<h1>O</h1>';
+            }
+
+
+            else if(arr[6]==1 && arr[7]==-1 && arr[8]==1)
+            {
+                arr[7]=0;document.getElementById('7').innerHTML = '<h1>O</h1>';
+            }
+            else if(arr[6]==1 && arr[7]==1 && arr[8]==-1)
+            {
+                arr[8]=0;document.getElementById('8').innerHTML = '<h1>O</h1>';
+            }
+            else if(arr[6]==-1 && arr[7]==1 && arr[8]==1)
+            {
+                arr[6]=0;document.getElementById('6').innerHTML = '<h1>O</h1>';
+            }
+
+
+            else if(arr[1]==1 && arr[4]==-1 && arr[7]==1)
+            {
+                arr[4]=0;document.getElementById('4').innerHTML = '<h1>O</h1>';
+            }
+            else if(arr[1]==1 && arr[4]==1 && arr[7]==-1)
+            {
+                arr[7]=0;document.getElementById('7').innerHTML = '<h1>O</h1>';
+            }
+            else if(arr[1]==-1 && arr[4]==1 && arr[7]==1)
+            {
+                arr[1]=0;document.getElementById('1').innerHTML = '<h1>O</h1>';
+            }
+
+
+            else if(arr[2]==1 && arr[5]==-1 && arr[8]==1)
+            {
+                arr[5]=0;document.getElementById('5').innerHTML = '<h1>O</h1>';
+            }
+            else if(arr[2]==1 && arr[5]==1 && arr[8]==-1)
+            {
+                arr[8]=0;document.getElementById('8').innerHTML = '<h1>O</h1>';
+            }
+            else if(arr[2]==-1 && arr[5]==1 && arr[8]==1)
+            {
+                arr[2]=0;document.getElementById('2').innerHTML = '<h1>O</h1>';
+            }
+
+
+            else if(arr[0]==1 && arr[4]==-1 && arr[8]==1)
+            {
+                arr[4]=0;document.getElementById('4').innerHTML = '<h1>O</h1>';
+            }
+            else if(arr[0]==1 && arr[4]==1 && arr[8]==-1)
+            {
+                arr[8]=0;document.getElementById('8').innerHTML = '<h1>O</h1>';
+            }
+            else if(arr[0]==-1 && arr[4]==1 && arr[8]==1)
+            {
+                arr[0]=0;document.getElementById('0').innerHTML = '<h1>O</h1>';
+            }
+
+
+            else if(arr[2]==1 && arr[4]==-1 && arr[6]==1)
+            {
+                arr[4]=0;document.getElementById('4').innerHTML = '<h1>O</h1>';
+            }
+            else if(arr[2]==1 && arr[4]==1 && arr[6]==-1)
+            {
+                arr[6]=0;document.getElementById('6').innerHTML = '<h1>O</h1>';
+            }
+            else if(arr[2]==-1 && arr[4]==1 && arr[6]==1)
+            {
+                arr[2]=0;document.getElementById('2').innerHTML = '<h1>O</h1>';
+            }
+
+        else if(arr[4]==-1)
+        {
+            arr[4]=0;document.getElementById('4').innerHTML = '<h1>O</h1>';
+        }
+        else
+            {
+                for(i=0;i<=8;i+=2)
+                {
+                    if(arr[i]==-1)
+                    {
+                        arr[i]=0;document.getElementById(i).innerHTML = '<h1>O</h1>';
+                        break;
+                    }
+                }
+            }
+
+        //win verif
+        lastMove=true;
+        for(i=0;i<=8;i++)
+        {
+            if(arr[i]==-1)
+                lastMove=false;
+        }
+
+        if(arr[0]==0 && arr[1]==0 && arr[2]==0)
+            endGame(0);
+        else if(arr[0]==1 && arr[1]==1 && arr[2]==1)
+            endGame(1);
+        else if(arr[3]==0 && arr[4]==0 && arr[5]==0)
+            endGame(0);
+        else if(arr[3]==1 && arr[4]==1 && arr[5]==1)
+            endGame(1);
+        else if(arr[6]==0 && arr[7]==0 && arr[8]==0)
+            endGame(0);
+        else if(arr[6]==1 && arr[7]==1 && arr[8]==1)
+            endGame(1);
+        else if(arr[0]==0 && arr[3]==0 && arr[6]==0)
+            endGame(0);
+        else if(arr[0]==1 && arr[3]==1 && arr[6]==1)
+            endGame(1);
+        else if(arr[1]==0 && arr[4]==0 && arr[7]==0)
+            endGame(0);
+        else if(arr[1]==1 && arr[4]==1 && arr[7]==1)
+            endGame(1);
+        else if(arr[2]==0 && arr[5]==0 && arr[8]==0)
+            endGame(0);
+        else if(arr[2]==1 && arr[5]==1 && arr[8]==1)
+            endGame(1);
+        else if(arr[0]==0 && arr[4]==0 && arr[8]==0)
+            endGame(0);
+        else if(arr[0]==1 && arr[4]==1 && arr[8]==1)
+            endGame(1);
+        else if(arr[2]==0 && arr[4]==0 && arr[6]==0)
+            endGame(0);
+        else if(arr[2]==1 && arr[4]==1 && arr[6]==1)
+            endGame(1);
+        else if(lastMove)
+            endGame(-1);
+      }
+      function endGame(result)
+      { if(result==1)
+            alert('Parabéns, vc ganhou!');
+        else if(result==0)
+            alert('A máquina ganhou!');
+        else if(result==-1)
+            alert('Velha!!!');
+        location.reload();
+      }
+    </script>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <td><div id="0" onclick="preencher('0')"></div></td>
+        <td><div id="1" onclick="preencher('1')"></div></td>
+        <td><div id="2" onclick="preencher('2')"></div></td>
+      </tr>
+      <tr>
+        <td><div id="3" onclick="preencher('3')"></div></td>
+        <td><div id="4" onclick="preencher('4')"></div></td>
+        <td><div id="5" onclick="preencher('5')"></div></td>
+      </tr>
+      <tr>
+        <td><div id="6" onclick="preencher('6')"></div></td>
+        <td><div id="7" onclick="preencher('7')"></div></td>
+        <td><div id="8" onclick="preencher('8')"></div></td>
+      </tr>
+    </table>
+  </body>
+</html>
