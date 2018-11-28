@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Poker</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0">
+    <style>
+        
+        .baralho{
+            
+            position: absolute;
+            margin-left: -25px;
+            margin-top: -36px;
+            left:50%;
+            top:350px;
+            width: 50px;
+            height: 72px;
+        }
+        
+        .carta-img {
+        -webkit-transform: scale(1);
+	transition: all 1s ease;
+        }
+
+        .carta-img:hover {
+	-webkit-transform: scale(3);
+        }
+        
+    </style>
+    <script language="JavaScript">
+        function load(){
+        }
+        function able(){
+
+        }
+        function jogadores()
+                    {
+                        var i= document.getElementById("Jogadores").value;
+                        if(i==2)
+                        {
+                          document.getElementById("infos").innerHTML = "Jogador 1<br>Nome <input type=\"text\" required name=\"nome1\"><br>Idade <input type=\"number\" required name=\"idade1\" min=\"18\" max=\"100\" value\"18\"><br>Jogador 2<br>Nome <input type=\"text\" required name=\"nome2\"><br>Idade <input type=\"number\" required name=\"idade2\"min=\"18\" max=\"100\"value\"18\">";
+                        }
+                        else if(i==3)
+                        {
+                          document.getElementById("infos").innerHTML = "Jogador 1<br>Nome <input type=\"text\" required name=\"nome1\"><br>Idade <input type=\"number\" required name=\"idade1\" min=\"18\" max=\"100\" value\"18\"><br>Jogador 2<br>Nome <input type=\"text\" required name=\"nome2\"><br>Idade <input type=\"number\" required name=\"idade2\"min=\"18\" max=\"100\"value\"18\"><br>Jogador 3<br>Nome <input type=\"text\" required name=\"nome3\"><br>Idade <input type=\"number\" required name=\"idade3\" min=\"18\" max=\"100\" value\"18\">";
+                        }
+                        else if(i==4)
+                        {
+                          document.getElementById("infos").innerHTML = "Jogador 1<br>Nome <input type=\"text\" required name=\"nome1\"><br>Idade <input type=\"number\" required name=\"idade1\" min=\"18\" max=\"100\" value\"18\"><br>Jogador 2<br>Nome <input type=\"text\" required name=\"nome2\"><br>Idade <input type=\"number\" required name=\"idade2\"min=\"18\" max=\"100\"value\"18\"><br>Jogador 3<br>Nome <input type=\"text\" required name=\"nome3\"><br>Idade <input type=\"number\" required name=\"idade3\" min=\"18\" max=\"100\" value\"18\"><br>Jogador 4<br>Nome <input type=\"text\" required name=\"nome4\"><br>Idade <input type=\"number\" required name=\"idade4\" min=\"18\" max=\"100\" value\"18\">";
+                        }
+                        else if(i==5)
+                        {
+                          document.getElementById("infos").innerHTML = "Jogador 1<br>Nome <input type=\"text\" required name=\"nome1\"><br>Idade <input type=\"number\" required name=\"idade1\" min=\"18\" max=\"100\" value\"18\"><br>Jogador 2<br>Nome <input type=\"text\" required name=\"nome2\"><br>Idade <input type=\"number\" required name=\"idade2\"min=\"18\" max=\"100\"value\"18\"><br>Jogador 3<br>Nome <input type=\"text\" required name=\"nome3\"><br>Idade <input type=\"number\" required name=\"idade3\" min=\"18\" max=\"100\" value\"18\"><br>Jogador 4<br>Nome <input type=\"text\" required name=\"nome4\"><br>Idade <input type=\"number\" required name=\"idade4\" min=\"18\" max=\"100\" value\"18\"><br>Jogador 5<br>Nome <input type=\"text\" required name=\"nome5\"><br>Idade <input type=\"number\" required name=\"idade5\" min=\"18\" max=\"100\" value\"18\">";
+                        }
+                        else if(i==6)
+                        {
+                          document.getElementById("infos").innerHTML = "Jogador 1<br>Nome <input type=\"text\" required name=\"nome1\"><br>Idade <input type=\"number\" required name=\"idade1\" min=\"18\" max=\"100\" value\"18\"><br>Jogador 2<br>Nome <input type=\"text\" required name=\"nome2\"><br>Idade <input type=\"number\" required name=\"idade2\"min=\"18\" max=\"100\"value\"18\"><br>Jogador 3<br>Nome <input type=\"text\" required name=\"nome3\"><br>Idade <input type=\"number\" required name=\"idade3\" min=\"18\" max=\"100\" value\"18\"><br>Jogador 4<br>Nome <input type=\"text\" required name=\"nome4\"><br>Idade <input type=\"number\" required name=\"idade4\" min=\"18\" max=\"100\" value\"18\"><br>Jogador 5<br>Nome <input type=\"text\" required name=\"nome5\"><br>Idade <input type=\"number\" required name=\"idade5\" min=\"18\" max=\"100\" value\"18\"><br>Jogador 6<br>Nome <input type=\"text\" required name=\"nome6\"><br>Idade <input type=\"number\" required name=\"idade6\" min=\"18\" max=\"100\" value\"18\">";
+                        }
+                        else if(i==7)
+                        {
+                          document.getElementById("infos").innerHTML = "Jogador 1<br>Nome <input type=\"text\" required name=\"nome1\"><br>Idade <input type=\"number\" required name=\"idade1\" min=\"18\" max=\"100\" value\"18\"><br>Jogador 2<br>Nome <input type=\"text\" required name=\"nome2\"><br>Idade <input type=\"number\" required name=\"idade2\"min=\"18\" max=\"100\"value\"18\"><br>Jogador 3<br>Nome <input type=\"text\" required name=\"nome3\"><br>Idade <input type=\"number\" required name=\"idade3\" min=\"18\" max=\"100\" value\"18\"><br>Jogador 4<br>Nome <input type=\"text\" required name=\"nome4\"><br>Idade <input type=\"number\" required name=\"idade4\" min=\"18\" max=\"100\" value\"18\"><br>Jogador 5<br>Nome <input type=\"text\" required name=\"nome5\"><br>Idade <input type=\"number\" required name=\"idade5\" min=\"18\" max=\"100\" value\"18\"><br>Jogador 6<br>Nome <input type=\"text\" required name=\"nome6\"><br>Idade <input type=\"number\" required name=\"idade6\" min=\"18\" max=\"100\" value\"18\"><br>Jogador 7<br>Nome <input type=\"text\" required name=\"nome7\"><br>Idade <input type=\"number\" required name=\"idade7\" min=\"18\" max=\"100\" value\"18\">";
+                        }
+                        else if(i==8)
+                        {
+                          document.getElementById("infos").innerHTML = "Jogador 1<br>Nome <input type=\"text\" required name=\"nome1\"><br>Idade <input type=\"number\" required name=\"idade1\" min=\"18\" max=\"100\" value\"18\"><br>Jogador 2<br>Nome <input type=\"text\" required name=\"nome2\"><br>Idade <input type=\"number\" required name=\"idade2\"min=\"18\" max=\"100\"value\"18\"><br>Jogador 3<br>Nome <input type=\"text\" required name=\"nome3\"><br>Idade <input type=\"number\" required name=\"idade3\" min=\"18\" max=\"100\" value\"18\"><br>Jogador 4<br>Nome <input type=\"text\" required name=\"nome4\"><br>Idade <input type=\"number\" required name=\"idade4\" min=\"18\" max=\"100\" value\"18\"><br>Jogador 5<br>Nome <input type=\"text\" required name=\"nome5\"><br>Idade <input type=\"number\" required name=\"idade5\" min=\"18\" max=\"100\" value\"18\"><br>Jogador 6<br>Nome <input type=\"text\" required name=\"nome6\"><br>Idade <input type=\"number\" required name=\"idade6\" min=\"18\" max=\"100\" value\"18\"><br>Jogador 7<br>Nome <input type=\"text\" required name=\"nome7\"><br>Idade <input type=\"number\" required name=\"idade7\" min=\"18\" max=\"100\" value\"18\"><br>Jogador 8<br>Nome <input type=\"text\" required name=\"nome8\"><br>Idade <input type=\"number\" required name=\"idade8\" min=\"18\" max=\"100\" value\"18\">";
+                        }
+                        else if(i==9)
+                        {
+                          document.getElementById("infos").innerHTML = "Jogador 1<br>Nome <input type=\"text\" required name=\"nome1\"><br>Idade <input type=\"number\" required name=\"idade1\" min=\"18\" max=\"100\" value\"18\"><br>Jogador 2<br>Nome <input type=\"text\" required name=\"nome2\"><br>Idade <input type=\"number\" required name=\"idade2\"min=\"18\" max=\"100\"value\"18\"><br>Jogador 3<br>Nome <input type=\"text\" required name=\"nome3\"><br>Idade <input type=\"number\" required name=\"idade3\" min=\"18\" max=\"100\" value\"18\"><br>Jogador 4<br>Nome <input type=\"text\" required name=\"nome4\"><br>Idade <input type=\"number\" required name=\"idade4\" min=\"18\" max=\"100\" value\"18\"><br>Jogador 5<br>Nome <input type=\"text\" required name=\"nome5\"><br>Idade <input type=\"number\" required name=\"idade5\" min=\"18\" max=\"100\" value\"18\"><br>Jogador 6<br>Nome <input type=\"text\" required name=\"nome6\"><br>Idade <input type=\"number\" required name=\"idade6\" min=\"18\" max=\"100\" value\"18\"><br>Jogador 7<br>Nome <input type=\"text\" required name=\"nome7\"><br>Idade <input type=\"number\" required name=\"idade7\" min=\"18\" max=\"100\" value\"18\"><br>Jogador 8<br>Nome <input type=\"text\" required name=\"nome8\"><br>Idade <input type=\"number\" required name=\"idade8\" min=\"18\" max=\"100\" value\"18\"><br>Jogador 9<br>Nome <input type=\"text\" required name=\"nome9\"><br>Idade <input type=\"number\" required name=\"idade9\" min=\"18\" max=\"100\" value\"18\">";
+                        }
+                        else if(i==10)
+                        {
+                          document.getElementById("infos").innerHTML = "Jogador 1<br>Nome <input type=\"text\" required name=\"nome1\"><br>Idade <input type=\"number\" required name=\"idade1\" min=\"18\" max=\"100\" value\"18\"><br>Jogador 2<br>Nome <input type=\"text\" required name=\"nome2\"><br>Idade <input type=\"number\" required name=\"idade2\"min=\"18\" max=\"100\"value\"18\"><br>Jogador 3<br>Nome <input type=\"text\" required name=\"nome3\"><br>Idade <input type=\"number\" required name=\"idade3\" min=\"18\" max=\"100\" value\"18\"><br>Jogador 4<br>Nome <input type=\"text\" required name=\"nome4\"><br>Idade <input type=\"number\" required name=\"idade4\" min=\"18\" max=\"100\" value\"18\"><br>Jogador 5<br>Nome <input type=\"text\" required name=\"nome5\"><br>Idade <input type=\"number\" required name=\"idade5\" min=\"18\" max=\"100\" value\"18\"><br>Jogador 6<br>Nome <input type=\"text\" required name=\"nome6\"><br>Idade <input type=\"number\" required name=\"idade6\" min=\"18\" max=\"100\" value\"18\"><br>Jogador 7<br>Nome <input type=\"text\" required name=\"nome7\"><br>Idade <input type=\"number\" required name=\"idade7\" min=\"18\" max=\"100\" value\"18\"><br>Jogador 8<br>Nome <input type=\"text\" required name=\"nome8\"><br>Idade <input type=\"number\" required name=\"idade8\" min=\"18\" max=\"100\" value\"18\"><br>Jogador 9<br>Nome <input type=\"text\" required name=\"nome9\"><br>Idade <input type=\"number\" required name=\"idade9\" min=\"18\" max=\"100\" value\"18\"><br>Jogador 10<br>Nome <input type=\"text\" required name=\"nome10\"><br>Idade <input type=\"number\" required name=\"idade10\" min=\"18\" max=\"100\" value\"18\"><br>";
+                        }
+                        document.getElementById("infos").insertAdjacentHTML("beforeend","<input type=\"submit\" value=\"Registrar\" />");
+                    }
+    </script>
+    </head>
+    
+    
+    <body onload="load()">
+        <p align="center" ><font size="20">Registre-se para distribuir as cartas.</font></p>
+        <form name="formulario" id="formulario" method="get" action="playScript.php">
+            <select id="Jogadores" name="Jogadores"  autofocus onchange="jogadores()">
+                        <option selected disabled hidden >Escolha o numero de jogadores</option>
+                        <option value=2> 2 Jogadores </option>
+                        <option value=3> 3 Jogadores </option>
+                        <option value=4> 4 Jogadores </option>
+                        <option value=5> 5 Jogadores </option>
+                        <option value=6> 6 Jogadores </option>
+                        <option value=7> 7 Jogadores </option>
+                        <option value=8> 8 Jogadores </option>
+                        <option value=9> 9 Jogadores </option>
+                        <option value=10> 10 Jogadores </option>
+            </select>
+            <div id="infos" style=" background-color: lavender" >
+                
+            </div>
+        </form>
+    </body>
+</html>
