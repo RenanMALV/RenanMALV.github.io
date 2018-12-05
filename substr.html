@@ -1,0 +1,29 @@
+﻿<html>
+<head>
+  <title>aula</title>
+<script>
+function manipulastr()
+{
+str = document.getElementById('str').value;
+sub = document.getElementById('sub').value;
+sublen = sub.length;
+contador = 0;
+for(i=0;i<=str.length;i++)
+  {
+    if(str.substr(i,sublen)==sub)
+      {
+        contador++;
+      }
+  }
+alert(contador + " ocorrencias.");
+}
+</script>
+</head>
+<body>
+  <form>
+    string: <input type="text" id="str"><br>
+    substring: <input type="text" id="sub"><br>
+    <input type="button" value="executar" onclick="manipulastr()">
+  </form>
+</body>
+</html>
