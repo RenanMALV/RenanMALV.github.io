@@ -1,0 +1,273 @@
+﻿<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <title>MinervaBots</title>
+    <script>
+        function refreshState(){
+            var R_checks = document.getElementsByName('tabs');
+            for (var i = 0, length = R_checks.length; i < length; i++) {
+                if (R_checks[i].checked) {
+                    document.getElementById("div" + R_checks[i].value).className = "selectedHeader";
+                    document.getElementById(R_checks[i].value + "_L").className = "selectedLabel";
+                    document.getElementById("arrow_" + R_checks[i].value).className = "selectedArrow";
+                    document.getElementById("content_" + R_checks[i].value).className = "ActiveContent";
+
+                }
+                else {
+                    document.getElementById("div" + R_checks[i].value).className = "headerItem";
+                    document.getElementById(R_checks[i].value + "_L").className = "menuLabel";
+                    document.getElementById("arrow_" + R_checks[i].value).className = "arrow";
+                    document.getElementById("content_" + R_checks[i].value).className = "Content";
+
+                }
+            }
+        }
+        function highlight_on(item) {
+            document.getElementById("div" + item).className = "selectedHeader";
+            document.getElementById(item + "_L").className = "selectedLabel";
+        }
+        function highlight_off(item) {
+            if(!document.getElementById(item).checked){
+                document.getElementById("div" + item).className = "headerItem";
+                document.getElementById(item + "_L").className = "menuLabel";
+            }
+        }
+        let counter = 1;
+        function start_carousel() {
+            const carouselSlide = document.querySelector('.carousel-slide');
+            const carouselImages = document.querySelectorAll('.carousel-slide img');   
+            const size = carouselImages[0].clientWidth;
+            carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+
+            setTimeout(() => { setInterval(slide, 2500); }, 2000);
+        }
+        function slide() {
+            const carouselSlide = document.querySelector('.carousel-slide');
+            const carouselImages = document.querySelectorAll('.carousel-slide img');
+            const size = carouselImages[0].clientWidth;
+            if (counter >= carouselImages.length - 1)
+                return;
+            carouselSlide.style.transition = 'transform 0.7s ease-in-out';
+            counter++;
+            carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+
+            carouselSlide.addEventListener('transitionend', () => {
+                if (carouselImages[counter].id === 'lastClone') {
+                    carouselSlide.style.transition = 'none';
+                    counter = carouselImages.length - 2;
+                    carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+                }
+                if (carouselImages[counter].id === 'firstClone') {
+                    carouselSlide.style.transition = 'none';
+                    counter = carouselImages.length - counter;
+                    carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+
+                }
+            });
+        }
+    </script>
+
+    <style>
+        html {
+            height:100%;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url("src/bg.png");
+            display:flex;
+            flex-direction:column;
+            height:100%;
+        }
+
+        #logo{
+            position:relative;
+            background-color:#9e1f22;
+            margin: 0%;
+            padding: 0px;
+            width: 30%;
+
+        }
+        #header{
+            position: fixed;
+            margin: 0px;
+            padding: 0px;
+            width: 100%;
+            background-color: transparent;
+            display: flex;
+        }
+        .headerItem{
+            position:relative;
+            transition: background-color 0.5s ease-out;
+            display:block;
+            background-color: #691416;
+            margin: 0px;
+            padding: 0px;
+            height: 60px;
+            width: 250px;
+        }
+        .radioMenu {
+            display: none;
+            padding: 0px;
+        }
+        .menuLabel{
+            position:relative;
+            transition: color 1s ease-out;
+            display: block;
+            font-size: 26px;
+            font-family:'Bebas Neue';
+            color:white;
+            padding: 17px 0px;
+            text-align: center;
+        }
+
+        .selectedHeader{
+            transition: background-color 0.5s ease-out;
+            background-color: white;
+            display:block;
+            margin: 0px;
+            padding: 0px;
+            height: 60px;
+            width: 250px;
+        }
+        .selectedLabel{
+            transition: color 1s ease-out;
+            display: block;
+            font-size: 26px;
+            font-family:'Bebas Neue';
+            color:#691416;
+            padding: 17px 0px;
+            text-align: center;
+        }
+        .arrow {
+            transition: all 0.1s ease-in;
+            display:block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top:-10.5px;
+            width: 0; 
+            height: 0; 
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 10px solid transparent;
+        }
+        .selectedArrow {
+            transition: all 0.3s ease-in;
+            display:block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top:-5.5px;
+            width: 0; 
+            height: 0; 
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 10px solid white;
+        }
+
+        .ActiveContent {
+            overflow:hidden;
+            display:flex;
+            position:relative;
+            width:100%;
+            padding: 60px 0px 0px 0px;
+            margin: auto;
+            z-index:-1;
+            flex: 1 0 auto;
+        }
+        .Content {
+            display:none;
+            position:relative;
+            width: 100%;
+            padding: 60px 0px 0px 0px;
+            margin: 0px;
+            z-index:-1;
+        }
+        .carousel-slide {
+            display:inline-flex;
+            position:relative;
+            width: 100%;
+        }
+        .carousel-slide img {
+            min-width: 100%;
+        }
+        .Ft {
+            background-color: whitesmoke;
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+<body onload="refreshState(); start_carousel();">
+    <div id="header">
+        <div class="headerItem" style="width: 15%;"></div>
+
+        <div id="logo">
+            <img src="src/LogoMB.png" alt="MinervaBots" style="padding: 5% 0px 0px 0px; max-width: 50%;height:auto;margin:auto;display:block"/>
+            <img src="src/LogoMB2.png" alt="MinervaBots" style="padding: 0px; max-width: 100%;height:auto;margin:-10% auto -10% auto;display:block" />
+        </div>
+
+        <div class="headerItem" style="width: 15%;"></div>
+
+        <div id="divHOME" class="headerItem" onmouseover="highlight_on('HOME')" onmouseout="highlight_off('HOME')">
+            <input type="radio" id="HOME" value="HOME" name="tabs" checked class="radioMenu" onchange="refreshState()"/>
+                <label id="HOME_L" for="HOME" class="menuLabel">HOME</label>
+                <div id="arrow_HOME" class="arrow"></div>
+        </div>
+        <div id="divSOBRE" class="headerItem" onmouseover="highlight_on('SOBRE')" onmouseout="highlight_off('SOBRE')">
+            <input type="radio" id="SOBRE" value="SOBRE" name="tabs" class="radioMenu" onchange="refreshState()"/>
+                <label id="SOBRE_L" for="SOBRE" class="menuLabel">SOBRE</label>
+                <div id="arrow_SOBRE" class="arrow"></div>
+        </div>
+        <div id="divPARCEIROS" class="headerItem" onmouseover="highlight_on('PARCEIROS')" onmouseout="highlight_off('PARCEIROS')">
+            <input type="radio" id="PARCEIROS" value="PARCEIROS" name="tabs" class="radioMenu" onchange="refreshState()"/>
+                <label id="PARCEIROS_L" for="PARCEIROS" class="menuLabel">PARCEIROS</label>
+                <div id="arrow_PARCEIROS" class="arrow"></div>
+        </div>
+        <div id="divCONTATO" class="headerItem" onmouseover="highlight_on('CONTATO')" onmouseout="highlight_off('CONTATO')">
+            <input type="radio" id="CONTATO" value="CONTATO" name="tabs" class="radioMenu" onchange="refreshState()"/>
+                <label id="CONTATO_L" for="CONTATO" class="menuLabel">CONTATO</label>
+                <div id="arrow_CONTATO" class="arrow"></div>
+        </div>
+
+        <div class="headerItem" style="width: 40%;"></div>
+    </div>
+
+    <div id="content_HOME" class="ActiveContent">
+        <div class="carousel-slide">
+            <img src="src/trofeuHURB.jpg" id="lastClone" alt="">
+            <img src="src/winterXV.jpg" alt="">
+            <img src="src/trofeuHURB.jpg" alt="">
+            <img src="src/winterXV_XTD.jpg" alt="">
+            <img src="src/CT_MB.jpg" alt="">
+            <img src="src/3kg.jpg" alt="">
+            <img src="src/winterXV.jpg" id="firstClone" alt="">
+        </div>
+    </div>
+    <div id="content_SOBRE" class="Content">
+        <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tellus orci ac auctor augue mauris. Scelerisque eleifend donec pretium vulputate sapien nec sagittis aliquam. Eu ultrices vitae auctor eu. Id ornare arcu odio ut sem nulla. Aliquam malesuada bibendum arcu vitae elementum curabitur vitae nunc. Ultricies integer quis auctor elit sed vulputate mi sit amet. Velit euismod in pellentesque massa placerat duis ultricies lacus sed. Nisi est sit amet facilisis. Et ligula ullamcorper malesuada proin libero nunc consequat interdum. Vitae elementum curabitur vitae nunc sed velit. Tellus pellentesque eu tincidunt tortor aliquam nulla facilisi. Integer vitae justo eget magna fermentum iaculis. Vestibulum mattis ullamcorper velit sed ullamcorper morbi. Quam nulla porttitor massa id neque aliquam.
+
+Ut sem viverra aliquet eget. Elit duis tristique sollicitudin nibh sit amet commodo. Egestas sed sed risus pretium quam. Euismod lacinia at quis risus. Et magnis dis parturient montes nascetur ridiculus mus mauris vitae. Facilisis sed odio morbi quis commodo odio aenean sed adipiscing. Sit amet facilisis magna etiam. Faucibus in ornare quam viverra orci sagittis eu volutpat odio. Amet risus nullam eget felis eget nunc lobortis mattis aliquam. Adipiscing elit pellentesque habitant morbi tristique senectus et netus et. Vivamus arcu felis bibendum ut tristique. Lobortis scelerisque fermentum dui faucibus in. Amet volutpat consequat mauris nunc congue. Massa eget egestas purus viverra accumsan in nisl nisi scelerisque. Eleifend quam adipiscing vitae proin sagittis. Lacinia quis vel eros donec.
+
+Vestibulum morbi blandit cursus risus at ultrices mi. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus. Amet consectetur adipiscing elit ut aliquam purus sit amet. Vitae tempus quam pellentesque nec. Malesuada nunc vel risus commodo viverra. Id volutpat lacus laoreet non curabitur gravida arcu ac tortor. Felis eget velit aliquet sagittis id consectetur purus ut faucibus. Ornare suspendisse sed nisi lacus sed viverra. Venenatis tellus in metus vulputate eu scelerisque felis imperdiet. Tempor commodo ullamcorper a lacus vestibulum sed arcu non odio.
+
+Dui ut ornare lectus sit amet. Vivamus arcu felis bibendum ut tristique. Vestibulum lectus mauris ultrices eros in cursus turpis massa. Lectus urna duis convallis convallis tellus id. Id aliquet lectus proin nibh. Quis ipsum suspendisse ultrices gravida dictum fusce. Sed felis eget velit aliquet sagittis id consectetur purus ut. Vitae sapien pellentesque habitant morbi tristique senectus et. Ipsum dolor sit amet consectetur adipiscing elit duis tristique sollicitudin. Urna molestie at elementum eu facilisis sed odio morbi. Mattis vulputate enim nulla aliquet porttitor lacus luctus. Nulla pellentesque dignissim enim sit amet venenatis urna cursus eget. Purus semper eget duis at tellus at urna condimentum mattis. Accumsan lacus vel facilisis volutpat est. Sodales ut etiam sit amet nisl purus. Sed lectus vestibulum mattis ullamcorper. Tellus rutrum tellus pellentesque eu tincidunt tortor. Purus viverra accumsan in nisl nisi scelerisque eu ultrices. Elementum nisi quis eleifend quam adipiscing vitae proin.
+
+Molestie ac feugiat sed lectus vestibulum mattis ullamcorper velit. In dictum non consectetur a. Aliquam faucibus purus in massa tempor nec. Commodo viverra maecenas accumsan lacus vel facilisis volutpat. Sed adipiscing diam donec adipiscing. Purus ut faucibus pulvinar elementum integer. Donec adipiscing tristique risus nec. Et ligula ullamcorper malesuada proin libero nunc consequat interdum. Feugiat in fermentum posuere urna nec. Suspendisse ultrices gravida dictum fusce. Morbi tincidunt ornare massa eget egestas purus. Sit amet est placerat in egestas. Purus semper eget duis at tellus at.</h1>
+    </div>
+    <div id="content_PARCEIROS" class="Content">
+        parceiros
+    </div>
+    <div id="content_CONTATO" class="Content">
+        contato
+    </div>
+    <footer class="Ft">
+        footer
+        <br /> 
+        contato
+        <br />
+        rio
+    </footer>
+
+</body>
+</html>
